@@ -9,7 +9,7 @@ int main()
    cout << " 1. postfix" << endl;
         int a=5;
          cout << "the value of a is :"<< a++ << endl; // prints 5, then a becomes 6
-   cout<<" 2. prefix" << endl; 
+    cout<<" 2. prefix" << endl; 
          cout << "the value of a is : " << ++a << endl; // gives 7 because a=6 rn 
    cout << " 3. binary operators ";
       cout << "*1 .multiplication and division";
