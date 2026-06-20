@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int marks;
+    cout << "Enter your marks: ";
+    cin >> marks;
+
+    // Example of else-if ladder
+    if (marks >= 90) {
+        cout << "Grade: A+" << endl;
+    }
+    else if (marks >= 75) {
+        cout << "Grade: A" << endl;
+    }
+    else if (marks >= 60) {
+        cout << "Grade: B" << endl;
+    }
+    else if (marks >= 40) {
+        cout << "Grade: C" << endl;
+    }
+    else {
+        cout << "Fail" << endl;
+    }
+
+    // Example of nested if
+    int age;
+    bool hasLicense;
+
+    cout << "\nEnter your age: ";
+    cin >> age;
+
+    cout << "Do you have a driving license? (1 for Yes, 0 for No): ";
+    cin >> hasLicense;
+
+    if (age >= 18) {
+        if (hasLicense) {
+            cout << "You can drive." << endl;
+        }
+        else {
+            cout << "You are old enough but need a license." << endl;
+        }
+    }
+    else {
+        cout << "You are too young to drive." << endl;
+    }
+
+    return 0;
+}
