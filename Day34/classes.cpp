@@ -6,7 +6,8 @@ class Student {
       string name;
       int age;
 
-      void introduce() {
+      void introduce()
+       {
          cout << "My name is " << name << " and I am " << age << " years old." << endl;
       }
 };

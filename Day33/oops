@@ -1,0 +1,36 @@
+Introduction to OOP
+
+OOP is one of the most important programming concepts.
+
+Essential for interviews and technical exams.
+
+Defined as an approach built on principles.
+
+
+From Procedural to Object-Oriented
+Procedural languages like C handled input/output directly.
+OOP emerged to solve real-world problems by modeling everything as objects.
+Objects combine data (attributes) and methods (functions).
+
+Real-World Example: Zomato
+Customer, order, restaurant, and delivery agent are all objects.
+Customer data: name, phone, address.
+Customer behavior: add to cart, make payment, track order.
+Restaurant data: name, rating, address; behavior: update menu.
+
+Advantages of OOP
+Easier to maintain.
+Reusable and scalable.
+Secure and well-organized.
+Models real-world problems effectively.
+ 
+ Four Pillars of OOP
+Encapsulation: Bind data and methods, restrict direct access.
+Inheritance: Reuse properties from parent classes (e.g., premium customer inherits base customer attributes).
+Polymorphism: Same method name used differently (e.g., “track order” by customer, restaurant, delivery agent).
+Abstraction: Hide internal complexity (e.g., customer doesn’t see how food is prepared, only the final delivery).
+ 
+
+Conclusion
+OOP revolves around these four pillars.
+Future lectures will dive deeper into each concept with execution examples.
