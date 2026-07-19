@@ -1,0 +1,34 @@
+The 5 Types of Inheritance
+
+1. Single Inheritance
+A single child class inherits from a single parent class. This is the simplest and most common form of inheritance.
+Structure: Parent → Child
+Real-world analogy: A regular smartphone inheriting basic features from a generic cell phone.
+
+
+2. Multiple Inheritance
+A single child class inherits properties and behaviors from more than one parent class.
+Structure: Parent A + Parent B → Child
+Note: Languages like Java and C# do not support multiple inheritance directly with classes to avoid
+ ambiguity (the "Diamond Problem"), but they allow it through Interfaces. Languages like C++ and Python support it directly.
+
+
+3. Multilevel Inheritance
+A child class inherits from a parent class, which in turn acts as a child class for another parent class. It forms a linear chain.
+Structure: Grandparent → Parent → Child
+Real-world analogy: A sports car inherits from a car class, which inherits from a general vehicle class.
+
+
+4. Hierarchical Inheritance
+Multiple child classes inherit from a single, shared parent class.
+Structure:
+Parent → Child A
+
+Parent → Child B
+Real-world analogy: A bank account parent class branching into specific SavingAccount and CheckingAccount classes.
+
+
+5. Hybrid Inheritance
+A combination of two or more types of inheritance mentioned above (usually a mix of Hierarchical and Multilevel, or Multiple).
+Structure: A diamond or web-like structure. For example, two child classes inherit from one parent, and a final class 
+inherits from both child classes.
