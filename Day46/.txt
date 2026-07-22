@@ -1,0 +1,91 @@
+These three terms are often used interchangeably in 
+Object-Oriented Programming (OOP), but they actually solve different problems.
+
+Here is the quickest way to remember the distinction:
+
+* Abstraction is about what an object does, hiding unnecessary complexity.
+* Encapsulation is about how data and methods are grouped together into a single unit.
+* Data Hiding is about restricting access to internal data to protect it from unauthorized modification.
+
+
+
+## Direct Comparison
+
+ Concept  Core Objective  Primary Mechanism  Real-World Analogy 
+
+ Abstraction  Hide unnecessary implementation details and show only relevant features.  Abstract classes, Interfaces  A car's steering wheel and pedals: you drive without needing to know how the engine ignites fuel. 
+ Encapsulation  Bundle data (variables) and behavior (methods) into a single cohesive unit (class).  Classes, Objects  A pill capsule: it packages multiple ingredients into one medicine unit. 
+ Data Hiding  Protect internal state from direct external modification.  Private/Protected access specifiers, Getters/Setters  A bank vault: customers access their funds via a teller, not by walking in and grabbing cash themselves. 
+
+
+
+### 1. Abstraction (Focus: *Design / High-Level Interface*)
+
+Abstraction hides complexity. It exposes a clear, high-level interface so callers don't have to worry about low-level algorithms or operational steps.
+
+* How it's achieved: Interfaces, Abstract Classes.
+* Why it matters: Reduces code coupling and makes systems easier to maintain or extend.
+
+```cpp
+// Interface / Abstraction: You only care that it can play sound
+class AudioPlayer {
+public:
+    virtual void playSound() = 0; // The 'how' is hidden
+};
+
+```
+
+### 2. Encapsulation (Focus: *Organization / Packaging*)
+
+Encapsulation is the physical or logical grouping of state (variables) and behavior (methods) inside one structure. It creates a boundary around related code.
+
+* How it's achieved: Defining a `class` or `struct` that contains both fields and methods.
+* Why it matters: Keeps code modular and organized.
+
+```cpp
+class BankAccount {
+    // Both variables and functions live inside the same boundary (Encapsulation)
+    double balance;
+    
+    void calculateInterest() {
+        // internal logic
+    }
+};
+
+```
+
+### 3. Data Hiding (Focus: *Security / Data Integrity*)
+
+Data Hiding prevents code outside a class from directly reading or
+ altering sensitive fields. Access is controlled strictly through public methods
+  (getters and setters), where validation rules can be enforced.
+
+* How it's achieved: `private` / `protected` access modifiers.
+* Why it matters: Prevents invalid states (e.g., setting a bank balance or age to a negative number).
+
+# cpp
+class BankAccount {
+private:
+    double balance; // Hidden from direct external access
+
+public:
+    // Controlled access with validation
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+    
+    double getBalance() const {
+        return balance;
+    }
+};
+
+```
+
+
+
+> How They Intersect:
+> Encapsulation is the broader technique of wrapping things in a class. 
+Data Hiding is achieved within Encapsulation by marking members as `private`. Abstraction
+ uses Encapsulation to expose simple public methods while hiding the underlying complexity.
