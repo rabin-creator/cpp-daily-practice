@@ -1,0 +1,102 @@
+Polymorphism comes from Greek: poly (many) and morph (forms). In Object-Oriented 
+Programming, it means the ability 
+for different objects to respond to the same method call in their own unique way.
+
+It allows you to write code that interacts with a 
+general interface, while the specific behavior changes 
+automatically based on the actual object being used
+
+The Two Main Types of Polymorphism
+OOP breaks polymorphism into two distinct timing phases:
+   Compile-Time (Static) and Run-Time (Dynamic)
+   
+1. Compile-Time Polymorphism (Static)
+The compiler determines which function to call at compile 
+time based on the parameters passed (number, data types, or order).
+
+A. Method / Function Overloading
+Multiple functions in the same scope share
+ the same name, but have different parameter signatures.
+ 
+ for example :
+
+ class Calculator {
+public:
+    // Same function name, different parameter types
+    int add(int a, int b) { 
+        return a + b; 
+    }
+    
+    double add(double a, double b) { 
+        return a + b; 
+    }
+    
+    int add(int a, int b, int c) { 
+        return a + b + c; 
+    }
+};
+
+
+B. Operator Overloading
+Customizing how standard 
+operators (like +, -, ==) behave when used with custom class objects.
+
+class Complex {
+public:
+    double real, imag;
+    
+    // Overloading the '+' operator to add two complex numbers
+    Complex operator + (const Complex& obj) {
+        Complex res;
+        res.real = real + obj.real;
+        res.imag = imag + obj.imag;
+        return res;
+    }
+};
+
+
+
+2. Run-Time Polymorphism (Dynamic)
+The specific method to execute is resolved at runtime depending 
+on the actual object type, not the pointer/reference type holding it.
+
+Method Overriding
+A derived (child) class provides its own specific implementation of a method that is
+ already defined in its base (parent) class.
+
+How it works: Requires inheritance and dynamic dispatch mechanisms 
+(like virtual functions in C++ or standard overridden methods in Java/Python).
+for example :
+#include <iostream>
+
+class Animal {
+public:
+    // 'virtual' tells the compiler to resolve this at runtime
+    virtual void makeSound() {
+        std::cout << "Some generic animal sound\n";
+    }
+};
+
+class Dog : public Animal {
+public:
+    void makeSound() override {
+        std::cout << "Woof! Woof!\n";
+    }
+};
+
+class Cat : public Animal {
+public:
+    void makeSound() override {
+        std::cout << "Meow!\n";
+    }
+};
+
+int main() {
+    // Parent pointers holding child objects
+    Animal* myPet1 = new Dog();
+    Animal* myPet2 = new Cat();
+
+    // Same line of code, but different behaviors executed at runtime
+    myPet1->makeSound(); // Outputs: Woof! Woof!
+    myPet2->makeSound(); // Outputs: Meow!
+}
